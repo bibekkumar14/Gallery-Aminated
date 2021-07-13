@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+         <!-- nar bar div -->
+    <div class="container">  
+        <div class="navbar">
+            <img src="images/logo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Office</a></li>
+                    <li><a href="">Hotels</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon">
+         </div>
+              
+         <div class="row">
+             <div class="col">
+                 <div class="text-box">
+                     <h5>Our Products</h5>
+                     <h1> <b>Simplicity</b><br> is the <b>ultimate</b> sophistication</h1>
+                 </div>
+
+                <img src="images/circle.png" class="small-icon1">
+                <img src="images/circle.png" class="small-icon2">
+                <img src="images/square.png" class="small-icon3">
+
+             </div>
+             <div class="col">
+                 <div class="gallery-box">
+                     <img src="images/pic2.jpg" id="gallery">
+
+                     <ul>
+                         <li class="btn">01</li>
+                         <li class="btn active">02</li>
+                         <li class="btn">03</li>
+                         <li class="btn">04</li>
+                     </ul>
+                 </div>
+
+             </div>
+         </div>
+        <img src="images/circle.png" class="small-icon4">
+        <img src="images/square.png" class="small-icon5">
+
+
+    </div>
+
+
+  <!-- ------cursor style-------->
+
+  <div id="cursor"></div>
+
+
+  <script>
+      var cursor = document.getElementById("cursor");
+
+      document.onmousemove = function(e){
+          cursor.style.left = (e.pageX -25) + "px";
+          cursor.style.top = (e.pageY -25) + "px";
+          cursor.style.display = "block";
+      }
+
+  </script>
+
+    <!-------------------->
+    <script>
+        var btn = document.getElementsByClassName("btn");
+        var gallery = document.getElementById("gallery");
+
+        var images = new Array(
+            "images/pic1.jpg",
+            "images/pic2.jpg",
+            "images/pic3.jpg",
+            "images/pic4.jpg"
+
+        );
+
+
+
+
+
+        for(let i=0; i<btn.length; i++){
+            btn[i].onclick = function()
+            {
+
+                gallery.src = images[i];
+                let current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace("active", "");
+                this.className += " active";
+            };
+        }
+
+    </script>
+
+     <!-- bubbles section -->
+
+<div class="bubbles">
+    <img src="images/circle.png">
+    <img src="images/bubble.png">
+    <img src="images/bubble.png">
+    <img src="images/bubble.png">
+    <img src="images/bubble.png">
+    <img src="images/bubble.png">
+    <img src="images/circle.png">
+</div>
+
+<!-- contact -->
+
+<section class="contact">
+    <div class="container">
+        <div style="padding: 50px;">
+        <h1 class="section-heading">Contact <span>Us</span> </h1>
+        </div>
+        
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="./images/phone.png">
+                <h1>Call Us On</h1>
+                <h6>1234567890</h6>
+            </div>
+            <div class="card">
+              <img src="./images/message.png" style="width: 150px;" alt="message">
+              <h1>Email Us At</h1>
+              <h6>Support@companyname.com</h6>
+          </div>
+          <div class="card">
+              <img src="./images/map.png" style="width: 150px;" alt="map">
+              <h1>Visit Office</h1>
+              <h6>Dehradun</h6>
+          </div>
+
+      </div>
+
+      <form action="">
+          <div class="input-wrap">
+              <input type="text" placeholder="Your Name *">
+              <input type="email" placeholder="Your Email *">
+
+        </div>
+        <div class="input-wrap-2">
+            <input type="text" placeholder="Your Subject...">
+            <textarea name="" id="" cols="" rows="" placeholder="Your Message..."></textarea>
+        </div>
+        <div class="btn-wrapper">
+            <button class="btn btn-primary">Send Message</button>
+        </div>
+
+      </form>o
+
+    </div>
+</section>             
+
+
+
+    
+</body>
+</html>
